@@ -52,24 +52,24 @@ def compare_throws(user_throw, comp_throw):
 def play_one_round():
     """Play a single round of Rock-Paper-Scissors. Return 'win'/'lose'/'tie'."""
     print("\n---------------------------------")
-    print("🎮 Ready to play a new round!")
+    print("Ready to play a new round!")
     pause()
 
     user = get_user_throw()
-    print(f"👉 You threw:       {user.upper()}")
+    print(f"You threw:       {user.upper()}")
     pause(0.3)
 
     comp = computer_throw()
-    print(f"🖥️  Computer threw: {comp.upper()}")
+    print(f"Computer threw: {comp.upper()}")
     pause(0.3)
 
     result = compare_throws(user, comp)
     if result == "win":
-        print("✅ Result: You WIN this round!")
+        print("Result: You WIN this round!")
     elif result == "tie":
-        print("🟨 Result: It's a TIE.")
+        print("Result: It's a TIE.")
     else:
-        print("❌ Result: You LOSE this round.")
+        print("Result: You LOSE this round.")
     pause()
 
     return result
@@ -96,23 +96,23 @@ def start_game():
 
 def finish_game(games_played, user_wins, comp_wins):
     print("\n================= MATCH SUMMARY =================")
-    print(f"🎯 Rounds played: {games_played}")
-    print(f"🙋 You won:       {user_wins}")
-    print(f"🤖 Computer won:  {comp_wins}")
+    print(f"Rounds played: {games_played}")
+    print(f"You won:       {user_wins}")
+    print(f"Computer won:  {comp_wins}")
     ties = games_played - user_wins - comp_wins
-    print(f"🟨 Ties:          {ties}")
+    print(f"Ties:          {ties}")
     print("=================================================")
     if user_wins > comp_wins:
-        print("🏆 Great job! You won the match. See you next time!")
+        print("Great job! You won the match. See you next time!")
     elif user_wins < comp_wins:
-        print("🧠 The computer wins this time. Better luck next round!")
+        print("The computer wins this time. Better luck next round!")
     else:
-        print("🤝 It's an overall tie — well played!")
+        print("It's an overall tie — well played!")
     print("Thanks for playing PY-Rocks!")
 
 def show_running_score(games_played, user_wins, comp_wins):
     ties = games_played - user_wins - comp_wins
-    print(f"\n📊 Scoreboard -> You: {user_wins} | Computer: {comp_wins} | Ties: {ties}")
+    print(f"\n Scoreboard -> You: {user_wins} | Computer: {comp_wins} | Ties: {ties}")
     pause(0.5)
 
 def main():
