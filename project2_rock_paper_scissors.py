@@ -108,7 +108,7 @@ def finish_game(games_played, user_wins, computer_wins):
         print("The computer wins this time. Better luck next round!")
     else:
         print("It's an overall tie — well played!")
-    print("Thanks for playing PY-Rocks!")
+    print("Thanks for playing Python – Rock-Paper-Scissor Game!")
 
 def show_running_score(games_played, user_wins, computer_wins):
     ties = games_played - user_wins - computer_wins
