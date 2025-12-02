@@ -34,20 +34,20 @@ def get_user_throw():
         print(f"'{user_input}' is not a valid throw. Please enter r, p, or s.")
         pause(0.5)
 
-def compare_throws(user_throw, comp_throw):
+def compare_throws(user_throw, computer_throw):
     """
     Compare the user's and the computer's throws.
     Returns 'win', 'lose', or 'tie' (for the user).
     Rule: rock > scissors, scissors > paper, paper > rock.
     """
-    if user_throw == comp_throw:
+    if user_throw == computer_throw:
         return "tie"
     wins = {
         'rock': 'scissors',
         'scissors': 'paper',
         'paper': 'rock'
     }
-    return "win" if wins[user_throw] == comp_throw else "lose"
+    return "win" if wins[user_throw] == computer_throw else "lose"
 
 def play_one_round():
     """Play a single round of Rock-Paper-Scissors. Return 'win'/'lose'/'tie'."""
@@ -59,7 +59,7 @@ def play_one_round():
     print(f"You threw:       {user.upper()}")
     pause(0.3)
 
-    comp = computer_throw()
+    computer = computer_throw()
     print(f"Computer threw: {comp.upper()}")
     pause(0.3)
 
@@ -94,32 +94,32 @@ def start_game():
     print("---------------------------------")
     pause()
 
-def finish_game(games_played, user_wins, comp_wins):
+def finish_game(games_played, user_wins, computer_wins):
     print("\n================= MATCH SUMMARY =================")
     print(f"Rounds played: {games_played}")
     print(f"You won:       {user_wins}")
-    print(f"Computer won:  {comp_wins}")
+    print(f"Computer won:  {computer_wins}")
     ties = games_played - user_wins - comp_wins
     print(f"Ties:          {ties}")
     print("=================================================")
-    if user_wins > comp_wins:
+    if user_wins > computer_wins:
         print("Great job! You won the match. See you next time!")
-    elif user_wins < comp_wins:
+    elif user_wins < computer_wins:
         print("The computer wins this time. Better luck next round!")
     else:
         print("It's an overall tie — well played!")
     print("Thanks for playing PY-Rocks!")
 
-def show_running_score(games_played, user_wins, comp_wins):
-    ties = games_played - user_wins - comp_wins
-    print(f"\n Scoreboard -> You: {user_wins} | Computer: {comp_wins} | Ties: {ties}")
+def show_running_score(games_played, user_wins, computer_wins):
+    ties = games_played - user_wins - computer_wins
+    print(f"\n Scoreboard -> You: {user_wins} | Computer: {computer_wins} | Ties: {ties}")
     pause(0.5)
 
 def main():
     start_game()
     games_played = 0
     user_wins = 0
-    comp_wins = 0
+    computer_wins = 0
 
     while True:
         result = play_one_round()
@@ -128,14 +128,14 @@ def main():
         if result == "win":
             user_wins += 1
         elif result == "lose":
-            comp_wins += 1
+            computer_wins += 1
 
-        show_running_score(games_played, user_wins, comp_wins)
+        show_running_score(games_played, user_wins, computer_wins)
 
         if not play_again():
             break
 
-    finish_game(games_played, user_wins, comp_wins)
+    finish_game(games_played, user_wins, computer_wins)
 
 if __name__ == "__main__":
     main()
