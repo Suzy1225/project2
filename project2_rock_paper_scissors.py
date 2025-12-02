@@ -86,7 +86,7 @@ def play_again():
         pause(0.4)
 
 def start_game():
-    print("\n-- Welcome to PY-Rocks ---")
+    print("\n-- Welcome to Python – Rock-Paper-Scissor Game ---")
     print("---------------------------------")
     print("This is a Rock-Paper-Scissors championship-level match.")
     print("Rules: Rock beats Scissors, Scissors beats Paper, Paper beats Rock.")
